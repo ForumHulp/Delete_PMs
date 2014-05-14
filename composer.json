@@ -1,10 +1,10 @@
 {
 	"name": "forumhulp/delete_pms",
 	"type": "phpbb-extension",
-	"description": "An extension deleting pm's by cron",
+	"description": "An extension deleting pm's after a configurable timespan by cron",
 	"homepage": "http://forumhulp.com",
 	"version": "3.1.0-dev",
-	"keywords": ["forumhulp", "phpbb", "extension", "users"],
+	"keywords": ["forumhulp", "phpbb", "extension", "pm", "pb"],
 	"license": "GPL-2.0",
 	"authors": [
 		{
