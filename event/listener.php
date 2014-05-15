@@ -54,6 +54,14 @@ class listener implements EventSubscriberInterface
 					'type'		=> 'number:0:99',
 					'explain'	=> true
 				);
+
+			$config_set_vars['delete_pms_read'] = 
+				array(
+					'lang' 		=> 'DELETE_PMS_READ',
+					'validate'	=> 'bool',
+					'type'		=> 'radio:yes_no',
+					'explain'	=> true
+				);
 			$config_set_vars += array_slice($config_set_ext['vars'], 16, count($config_set_ext['vars']) - 1, true);
 			$event['display_vars'] = array('title' => $config_set_ext['title'], 'vars' => $config_set_vars);
 		}

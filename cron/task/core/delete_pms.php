@@ -48,13 +48,14 @@ class delete_pms extends \phpbb\cron\task\base
 	*/
 	public function run()
 	{
-		global $db;
+		global $db, $config;
 		$expire_date = time() - ($this->config['delete_pms_days'] * 86400);
 		$user_list = array();
 	
-		$sql = 'SELECT p.msg_id, u.username, p.message_attachment FROM ' . PRIVMSGS_TABLE . ' p 
+		$sql = 'SELECT p.msg_id, u.username, p.message_attachment FROM ' . PRIVMSGS_TO_TABLE . ' t 
+				LEFT JOIN ' . PRIVMSGS_TABLE . ' p ON (p.msg_id = t.msg_id)
 				LEFT JOIN ' . USERS_TABLE . ' u ON (u.user_id = p.author_id)
-				WHERE p.message_time < ' . $expire_date;
+				WHERE ' . (($this->config['delete_pms_read']) ? 't.pm_unread = 0 AND' : '') . ' p.message_time < ' . $expire_date;
 		
 		$result = $db->sql_query($sql);
 	
@@ -72,7 +73,7 @@ class delete_pms extends \phpbb\cron\task\base
 				{
 					if (!function_exists('phpbb_unlink'))
 					{
-						include($phpbb_root_path . 'includes/functions_admin.php');
+						include($phpbb_root_path . 'includes/functions_admin.' . $this->php_ext);
 					}
 					$sql = 'SELECT physical_filename FROM ' . ATTACHMENTS_TABLE . ' WHERE post_msg_id = ' . $key;
 					$result = $db->sql_query($sql);
@@ -93,10 +94,10 @@ class delete_pms extends \phpbb\cron\task\base
 			$db->sql_query($sql);
 			$db->sql_transaction('commit');
 					
-			add_log('admin', 'LOG_INACTIVE_DELETE', implode(', ', array_unique($user_list)));
+			add_log('admin', 'LOG_DELETE_PMS', implode(', ', array_unique($user_list)));
 		} else
 		{
-			add_log('admin', 'NO_INACTIVE_USERS');
+			add_log('admin', 'NO_DELETE_PMS');
 		}
 		$this->config->set('delete_pms_last_gc', time());
 	}

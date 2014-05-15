@@ -27,6 +27,7 @@ class install_delete_pms extends \phpbb\db\migration\migration
 			array('config.add', array('delete_pms_gc', 86400)),
 			array('config.add', array('delete_pms_last_gc', '0', 1)),
 			array('config.add', array('delete_pms_days', 30)),
+			array('config.add', array('delete_pms_read', 0)),
 			array('config.add', array('delete_pms_version', '3.1.0'))
 		);
 	}

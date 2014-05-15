@@ -1,4 +1,4 @@
-Delete PMs
-==========
+Delete_pms
+=====================
 
-Delete pm's via phpbb's cron after a timespan setup in boardfeatures
+An extension for phpBB 3.1 that will automatically delete pm's using the phpBB3 Cron.
