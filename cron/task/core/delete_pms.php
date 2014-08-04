@@ -49,7 +49,7 @@ class delete_pms extends \phpbb\cron\task\base
 	{
 		global $db, $config;
 		$expire_date = time() - ($this->config['delete_pms_days'] * 86400);
-		$user_list = array();
+		$user_list = $msg_list = array();
 	
 		$sql = 'SELECT p.msg_id, u.username, p.message_attachment FROM ' . PRIVMSGS_TO_TABLE . ' t 
 				LEFT JOIN ' . PRIVMSGS_TABLE . ' p ON (p.msg_id = t.msg_id)
