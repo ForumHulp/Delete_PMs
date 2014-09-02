@@ -12,10 +12,6 @@ namespace forumhulp\deletepms\cron\task\core;
 /**
 * @ignore
 */
-if (!defined('IN_PHPBB'))
-{
-	exit;
-}
 
 class deletepms extends \phpbb\cron\task\base
 {
@@ -50,20 +46,20 @@ class deletepms extends \phpbb\cron\task\base
 		global $db, $config;
 		$expire_date = time() - ($this->config['delete_pms_days'] * 86400);
 		$user_list = $msg_list = array();
-	
+
 		$sql = 'SELECT p.msg_id, u.username, p.message_attachment FROM ' . PRIVMSGS_TO_TABLE . ' t 
 				LEFT JOIN ' . PRIVMSGS_TABLE . ' p ON (p.msg_id = t.msg_id)
 				LEFT JOIN ' . USERS_TABLE . ' u ON (u.user_id = p.author_id)
 				WHERE ' . (($this->config['delete_pms_read']) ? 't.pm_unread = 0 AND' : '') . ' p.message_time < ' . $expire_date;
-		
+
 		$result = $db->sql_query($sql);
-	
+
 		while ($row = $db->sql_fetchrow($result))
 		{
 			$msg_list[$row['msg_id']] = array('username' => $row['username'], 'attachment' => $row['message_attachment']);
 		}
 		$db->sql_freeresult($result);
-	
+
 		if (sizeof($msg_list))
 		{
 			foreach($msg_list as $key => $value)
@@ -92,7 +88,7 @@ class deletepms extends \phpbb\cron\task\base
 			$sql = 'DELETE FROM ' . PRIVMSGS_TABLE . ' WHERE msg_id IN (' . implode(', ', array_keys($msg_list)) . ')';
 			$db->sql_query($sql);
 			$db->sql_transaction('commit');
-					
+
 			add_log('admin', 'LOG_DELETE_PMS', implode(', ', array_unique($user_list)));
 		} else
 		{
