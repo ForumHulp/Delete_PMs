@@ -7,7 +7,7 @@
 *
 */
 
-namespace forumhulp\delete_pms\cron\task\core;
+namespace forumhulp\deletepms\cron\task\core;
 
 /**
 * @ignore
@@ -17,7 +17,7 @@ if (!defined('IN_PHPBB'))
 	exit;
 }
 
-class delete_pms extends \phpbb\cron\task\base
+class deletepms extends \phpbb\cron\task\base
 {
 	protected $phpbb_root_path;
 	protected $php_ext;

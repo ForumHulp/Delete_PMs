@@ -7,7 +7,7 @@
 *
 */
 
-namespace forumhulp\delete_pms\event;
+namespace forumhulp\deletepms\event;
 
 /**
 * @ignore
@@ -62,7 +62,7 @@ class listener implements EventSubscriberInterface
 					'explain'	=> true
 				);
 			if(!function_exists("insert_config_array")) include("compatibility.php");
-			$display_vars['vars'] = insert_config_array($display_vars['vars'], $add_config_var, array('after' =>'allow_quick_reply'));
+			$display_vars['vars'] = phpbb_insert_config_array($display_vars['vars'], $add_config_var, array('after' =>'allow_quick_reply'));
 			$event['display_vars'] = array('title' => $display_vars['title'], 'vars' => $display_vars['vars']);
 		}
     }
@@ -71,7 +71,7 @@ class listener implements EventSubscriberInterface
 	{
 		$lang_set_ext = $event['lang_set_ext'];
 		$lang_set_ext[] = array(
-			'ext_name' => 'forumhulp/delete_pms',
+			'ext_name' => 'forumhulp/deletepms',
 			'lang_set' => 'delete_pms_common',
 		);
 		$event['lang_set_ext'] = $lang_set_ext;

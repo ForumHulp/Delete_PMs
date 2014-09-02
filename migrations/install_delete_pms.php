@@ -7,9 +7,9 @@
 *
 */
 
-namespace forumhulp\delete_pms\migrations;
+namespace forumhulp\deletepms\migrations;
 
-class install_delete_pms extends \phpbb\db\migration\migration
+class install_deletepms extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{

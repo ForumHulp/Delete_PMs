@@ -1,5 +1,5 @@
 {
-	"name": "forumhulp/delete_pms",
+	"name": "forumhulp/deletepms",
 	"type": "phpbb-extension",
 	"description": "An extension deleting pm's after a configurable timespan by cron",
 	"homepage": "http://forumhulp.com",
@@ -9,7 +9,6 @@
 	"authors": [
 		{
 			"name": "John Peskens",
-			"username": "John P",
 			"email": "info@forumhulp.com",
 			"role": "Developer"
 		}
