@@ -46,7 +46,7 @@ class listener implements EventSubscriberInterface
 		{
 			$display_vars = $event['display_vars'];
 
-			$add_config_var['delete_pms_days'] = 
+			$add_config_var['delete_pms_days'] =
 				array(
 					'lang' 		=> 'DELETE_PMS_DAYS',
 					'validate'	=> 'int',
