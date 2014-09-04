@@ -1,6 +1,6 @@
 services:
     cron.task.core.delete_pms:
-        class: forumhulp\delete_pms\cron\task\core\delete_pms
+        class: forumhulp\deletepms\cron\task\core\delete_pms
         arguments:
             - %core.root_path%
             - %core.php_ext%
@@ -11,7 +11,7 @@ services:
         tags:
             - { name: cron.task }
     forumhulp.delete_pms.listener:
-        class: forumhulp\delete_pms\event\listener
+        class: forumhulp\deletepms\event\listener
         arguments:
             - @controller.helper
         tags:

@@ -7,7 +7,7 @@
 *
 */
 
-namespace forumhulp\delete_pms;
+namespace forumhulp\deletepms;
 
 class ext extends \phpbb\extension\base
 {

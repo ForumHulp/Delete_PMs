@@ -13,7 +13,7 @@ namespace forumhulp\deletepms\cron\task\core;
 * @ignore
 */
 
-class deletepms extends \phpbb\cron\task\base
+class delete_pms extends \phpbb\cron\task\base
 {
 	protected $phpbb_root_path;
 	protected $php_ext;
