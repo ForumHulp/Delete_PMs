@@ -7,13 +7,13 @@
 *
 */
 
-namespace forumhulp\deletepms\migrations;
+namespace forumhulp\deletepms\migration;
 
 class install_deletepms extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return isset($this->config['delete_pms_version']) && version_compare($this->config['delete_pms_version'], '3.1.0', '>=');
+		return isset($this->config['delete_pms_version']) && version_compare($this->config['delete_pms_version'], '3.1.0.RC4', '>=');
 	}
 
 	static public function depends_on()
@@ -28,7 +28,7 @@ class install_deletepms extends \phpbb\db\migration\migration
 			array('config.add', array('delete_pms_last_gc', '0', 1)),
 			array('config.add', array('delete_pms_days', 30)),
 			array('config.add', array('delete_pms_read', 0)),
-			array('config.add', array('delete_pms_version', '3.1.0'))
+			array('config.add', array('delete_pms_version', '3.1.0.RC4'))
 		);
 	}
 }
