@@ -7,7 +7,7 @@
 *
 */
 
-namespace forumhulp\deletepms\migration;
+namespace forumhulp\deletepms\migrations;
 
 class install_deletepms extends \phpbb\db\migration\migration
 {
