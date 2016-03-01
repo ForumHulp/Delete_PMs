@@ -61,10 +61,7 @@ class listener implements EventSubscriberInterface
 					'type'		=> 'radio:yes_no',
 					'explain'	=> true
 				);
-			if(!function_exists("insert_config_array"))
-			{
-				include("compatibility.php");
-			}
+
 			$display_vars['vars'] = phpbb_insert_config_array($display_vars['vars'], $add_config_var, array('after' =>'allow_quick_reply'));
 			$event['display_vars'] = array('title' => $display_vars['title'], 'vars' => $display_vars['vars']);
 		}

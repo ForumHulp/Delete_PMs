@@ -24,5 +24,6 @@ $lang = array_merge($lang, array(
 	'DELETE_PMS_READ_EXPLAIN'	=> 'Wether to delete only read PM\'s or all PM\'s older then days',
 
 	'LOG_DELETE_PMS'			=> '<strong>PM\'s deleted from</strong><br />» %s',
-	'NO_DELETE_PMS'				=> 'No PM\'s deleted'
+	'NO_DELETE_PMS'				=> 'No PM\'s deleted',
+	'DELETEPMS_NOTICE'			=> '<div class="phpinfo"><p class="entry">Config settings are in %1$s » %2$s » %3$s.</p></div>',
 ));
