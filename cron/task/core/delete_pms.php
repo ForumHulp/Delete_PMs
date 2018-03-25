@@ -62,7 +62,7 @@ class delete_pms extends \phpbb\cron\task\base
 
 		if (sizeof($msg_list))
 		{
-			foreach($msg_list as $key => $value)
+			foreach ($msg_list as $key => $value)
 			{
 				if ($value['attachment'])
 				{
