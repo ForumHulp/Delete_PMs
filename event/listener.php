@@ -26,7 +26,7 @@ class listener implements EventSubscriberInterface
 	* Constructor
 	*
 	* @param \phpbb\controller\helper    $helper        Controller helper object
- 	*/
+	*/
 	public function __construct(\phpbb\controller\helper $helper)
 	{
 		$this->helper = $helper;
