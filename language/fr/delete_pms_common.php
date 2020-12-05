@@ -45,6 +45,6 @@ $lang = array_merge($lang, array(
 	'DELETE_PMS_READ_EXPLAIN'	=> 'Permet d’activer la suppression exclusive des messages privés lus et suivant le délais défini ci-dessus. Si désactivée, tous les MP seront supprimés.',
 
 	'LOG_DELETE_PMS'			=> '<strong>MP supprimés suivant le délais défini :</strong><br />» %s',
-	'NO_DELETE_PMS'				=> 'Au MP n’a été supprimé',
+	'NO_DELETE_PMS'				=> 'Aucun MP n’a été supprimé',
 	'DELETEPMS_NOTICE'			=> '<div class="phpinfo" style="max-width:556px;margin-right:auto;margin-left:auto;"><p class="entry">Les paramètres de cette extension sont accessibles depuis : %1$s » %2$s » %3$s.</p></div>',
 ));
