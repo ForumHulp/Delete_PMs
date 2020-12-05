@@ -2,10 +2,10 @@ services:
     forumhulp.delete_pms:
         class: forumhulp\deletepms\cron\task\core\delete_pms
         arguments:
-            - %core.root_path%
-            - %core.php_ext%
-            - @config
-            - @dbal.conn
+            - '%core.root_path%'
+            - '%core.php_ext%'
+            - '@config'
+            - '@dbal.conn'
         calls:
             - [set_name, [forumhulp.delete_pms]]
         tags:
@@ -13,6 +13,6 @@ services:
     forumhulp.delete_pms.listener:
         class: forumhulp\deletepms\event\listener
         arguments:
-            - @controller.helper
+            - '@controller.helper'
         tags:
             - { name: event.listener }

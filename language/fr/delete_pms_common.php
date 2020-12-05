@@ -40,11 +40,11 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'DELETE_PMS_DAYS' 			=> 'Délais de suppression des MP',
-	'DELETE_PMS_DAYS_EXPLAIN'	=> 'Permet de saisir le nombre jours avant lequel la tâche CRON du forum supprimera les MP.',
+	'DELETE_PMS_DAYS_EXPLAIN'	=> 'Permet de saisir le nombre de jours suivant lequel la tâche CRON du forum supprimera les MP (messages privés).',
 	'DELETE_PMS_READ'			=> 'Supprimer uniquement les MP lus',
-	'DELETE_PMS_READ_EXPLAIN'	=> 'Permet de sélectionner si seuls les MP lus sont supprimés ou tous les MP selon le nombre de jours d’ancienneté saisi.',
+	'DELETE_PMS_READ_EXPLAIN'	=> 'Permet d’activer la suppression exclusive des messages privés lus et suivant le délais défini ci-dessus. Si désactivée, tous les MP seront supprimés.',
 
-	'LOG_DELETE_PMS'			=> '<strong>MP supprimés selon le nombre de jour suivant :</strong><br />» %s',
-	'NO_DELETE_PMS'				=> 'Au MP n’a été supprimé',
+	'LOG_DELETE_PMS'			=> '<strong>MP supprimés suivant le délais défini :</strong><br />» %s',
+	'NO_DELETE_PMS'				=> 'Aucun MP n’a été supprimé',
 	'DELETEPMS_NOTICE'			=> '<div class="phpinfo" style="max-width:556px;margin-right:auto;margin-left:auto;"><p class="entry">Les paramètres de cette extension sont accessibles depuis : %1$s » %2$s » %3$s.</p></div>',
 ));
